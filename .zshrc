@@ -19,3 +19,13 @@ bindkey '^s' history-incremental-pattern-search-forward
 #colors
 
 #PROMPT="%{${fg[cyan]}%} $n %{${reset_color}%}"
+
+
+# postgresqlのデータベースdirを指定する
+export PGDATA=/usr/local/var/postgres
+
+#NUTFesのgroup-manager関連
+source "$DOTSDIR/group_manager.sh"
+
+#NS3
+export LD_LIBRARY_PATH=/usr/lib/:/usr/local/lib:~/workspace/ns-allinone-3.24/ns-3.24/build
