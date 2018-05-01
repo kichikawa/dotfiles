@@ -2,6 +2,10 @@ export DOTSDIR="$HOME/dotfiles"
 
 source "$DOTSDIR/set_proxy_by_dns.sh"
 
+#nodebrew path
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export NODEBREW_ROOT=/usr/local/var/nodebrew
+
 # rbenvのパス
 export PATH="$HOME/.rbenv/bin:$PATH"
 #rbenvの初期化設定
@@ -13,13 +17,6 @@ setopt auto_cd
 # Ctrl+rでヒストリーのインクリメンタルサーチ、Ctrl+sで逆順
 bindkey '^r' history-incremental-pattern-search-backward
 bindkey '^s' history-incremental-pattern-search-forward
-
-#色
-#autoload colors
-#colors
-
-#PROMPT="%{${fg[cyan]}%} $n %{${reset_color}%}"
-
 
 # postgresqlのデータベースdirを指定する
 export PGDATA=/usr/local/var/postgres
