@@ -61,22 +61,17 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " colors
-set runtimepath+=~/.vim/molokai
+" set runtimepath+=~/.vim/molokai
+" syntax on
+" colorscheme molokai
+
+" colors hybrid
+" https://github.com/w0ng/vim-hybrid
+set background=dark
+colorscheme hybrid
+
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
+colorscheme hybrid
 syntax on
-colorscheme molokai
 
-if &term =~ "xterm"
-  let &t_ti .= "\e[?2004h"
-  let &t_te .= "\e[?2004l"
-  let &pastetoggle = "\e[201~"
-
-  function XTermPasteBegin(ret)
-  set paste
-  return a:ret
-  endfunction
-
-  noremap <special> <expr> <Esc>[200~ XTermPasteBegin("0i")
-  inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
-  cnoremap <special> <Esc>[200~ <nop>
-  cnoremap <special> <Esc>[201~ <nop>
-endif
